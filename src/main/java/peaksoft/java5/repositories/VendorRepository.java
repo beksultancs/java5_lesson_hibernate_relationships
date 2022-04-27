@@ -37,8 +37,7 @@ public class VendorRepository implements AutoCloseable {
 
         entityManager.close();
     }
-
-    public void update(Vendor newVendor) {
+    public void merge(Vendor newVendor) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         entityManager.getTransaction().begin();
@@ -48,6 +47,20 @@ public class VendorRepository implements AutoCloseable {
         entityManager.getTransaction().commit();
 
         entityManager.close();
+    }
+
+    public Vendor findById(Long id) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        entityManager.getTransaction().begin();
+
+        Vendor vendor = entityManager.find(Vendor.class, id);
+
+        entityManager.getTransaction().commit();
+
+        entityManager.close();
+
+        return vendor;
     }
 
     public List<Vendor> findAll() {
@@ -63,24 +76,6 @@ public class VendorRepository implements AutoCloseable {
 
         return vendors;
     }
-
-
-    public Vendor findById(Long id) {
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-
-        entityManager.getTransaction().begin();
-
-        Vendor vendor = entityManager.createQuery("select v from Vendor v where v.id = ?1", Vendor.class)
-                .setParameter(1, id)
-                .getSingleResult();
-
-        entityManager.getTransaction().commit();
-
-        entityManager.close();
-
-        return vendor;
-    }
-
 
     @Override
     public void close() throws Exception {

@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static jakarta.persistence.CascadeType.*;
@@ -26,8 +27,8 @@ public class Vendor {
 
     private String email;
 
-    @OneToMany(cascade = {PERSIST, MERGE}, fetch = FetchType.EAGER)
-    private List<Book> books;
+    @OneToMany(cascade = ALL, mappedBy = "vendor")
+    private List<Book> books = new ArrayList<>();
 
     public Vendor() {
     }
@@ -37,11 +38,11 @@ public class Vendor {
         this.email = email;
     }
 
-    public void removeBookById(Long id) {
-        books.removeIf(book -> book.getId().equals(id));
+    public void addBook(Book book) {
+        this.books.add(book);
     }
 
-    public void addBook(Book newBook) {
-        this.books.add(newBook);
+    public void removeBook(Long id) {
+        this.books.removeIf(book -> book.getId().equals(id));
     }
 }

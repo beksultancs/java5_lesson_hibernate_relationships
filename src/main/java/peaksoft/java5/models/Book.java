@@ -26,6 +26,16 @@ public class Book {
 
     private BigDecimal price; // numeric(19, 2)
 
+//    ALL,
+//    PERSIST, X
+//    MERGE, ✅
+//    REMOVE, X
+//    REFRESH, X
+//    DETACH; X
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @ToString.Exclude
+    private Vendor vendor;
+
     public Book() {
     }
 

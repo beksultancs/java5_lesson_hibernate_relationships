@@ -17,58 +17,56 @@ public class App {
         BookRepository bookRepository = new BookRepository();
         VendorRepository vendorRepository = new VendorRepository();
 
+        bookRepository.deleteById(5L);
 
-        bookRepository.deleteById(4L);
-
-//        Book book = bookRepository.findById(4L);
 
 //        Vendor vendor = vendorRepository.findById(1L);
-//        System.out.println(vendor);
-//
-//        vendor.setBook(book);
-//
-//        vendorRepository.update(vendor);
 
-//        Vendor vendor = vendorRepository.findById(1L);
-//
-//        Book book1 = new Book(
-//                "451C",
-//                "Kunzaada Bekzhanova",
-//                BigDecimal.valueOf(1200)
-//        );
-
-//        bookRepository.save(book1);
-//        vendor.setBook(book1);
-//
-//        vendorRepository.update(vendor);
-
-//        Vendor vendor = new Vendor("Chynara", "chynara@gmail.com");
-//
-//        Book book1 = new Book(
-//                "Becoming",
-//                "Mishel Obama",
-//                BigDecimal.valueOf(2000)
-//        );
-//        Book book2 = new Book(
-//                "Educated",
-//                "Tara Westover",
-//                BigDecimal.valueOf(1400)
-//        );
-//        vendor.setBooks(List.of(book1, book2));
-//        vendorRepository.save(vendor);
-
+//        System.out.println("\u001B[35m " + vendor + "\u001B[35m");
 
 //        Book book = new Book(
-//                "Toolor Kulaganda",
-//                "Chyngyz Aitmatov",
-//                BigDecimal.valueOf(1000)
+//                "wpoertiu",
+//                "pwoeriut",
+//                BigDecimal.valueOf(2300)
 //        );
 //
-//        bookRepository.save(book);
+//        vendor.addBook(book);
+//        book.setVendor(vendor);
+////
+//        vendorRepository.merge(vendor);
+//
+//        Book book = bookRepository.findById(1L);
+//
+//        vendor.addBook(book);
+//
+//        book.setVendor(vendor);
+//
+//        vendorRepository.merge(vendor);
 
-//        bookRepository.findAll().forEach(System.out::println);
+
+//        Vendor aichurok = new Vendor(
+//                "Aichurok",
+//                "aichurok@gmail.com"
+//        );
+//
+//        Book book = new Book(
+//                "asdfasdf",
+//                "asdfasdfasd",
+//                BigDecimal.valueOf(1300)
+//        );
+//
+//        aichurok.addBook(book);
+//        book.setVendor(aichurok);
+//
+//        vendorRepository.save(aichurok);
+//        bookRepository.save(new Book(
+//                "asdfawef",
+//                "asdfasdf",
+//                BigDecimal.valueOf(1200)
+//        ));
 
         bookRepository.close();
         vendorRepository.close();
+
     }
 }

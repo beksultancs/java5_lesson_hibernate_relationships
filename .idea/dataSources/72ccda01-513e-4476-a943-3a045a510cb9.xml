@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.38">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>15375</IntrospectionStateNumber>
+      <IntrospectionStateNumber>15468</IntrospectionStateNumber>
       <ServerVersion>14.1</ServerVersion>
       <StartupTime>1650820896</StartupTime>
       <TimeZones>true ACDT
@@ -829,10 +829,10 @@ false Zulu
 13655||10|C|G
 13655||-9223372036854775808|U|G
 13655||10|U|G</Grants>
-      <IntrospectionStateNumber>15375</IntrospectionStateNumber>
+      <IntrospectionStateNumber>15468</IntrospectionStateNumber>
       <ObjectId>14021</ObjectId>
-      <Relations>sequence|table|41345|41346|1
-sequence|table|41354|41355|1
+      <Relations>sequence|table|41547|41548|1
+sequence|table|41556|41557|1
 </Relations>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4276,169 +4276,131 @@ sequence|table|41354|41355|1
     <schema id="273" parent="9" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>15375</IntrospectionStateNumber>
+      <IntrospectionStateNumber>15468</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>526</StateNumber>
       <OwnerName>postgres</OwnerName>
     </schema>
     <sequence id="274" parent="273" name="books_id_seq">
       <DataType>bigint|0s</DataType>
-      <ObjectId>41345</ObjectId>
-      <StateNumber>15367</StateNumber>
+      <ObjectId>41547</ObjectId>
+      <StateNumber>15463</StateNumber>
       <OwnerName>beksultanmamatkadyruulu</OwnerName>
     </sequence>
     <sequence id="275" parent="273" name="vendors_id_seq">
       <DataType>bigint|0s</DataType>
-      <ObjectId>41354</ObjectId>
-      <StateNumber>15368</StateNumber>
+      <ObjectId>41556</ObjectId>
+      <StateNumber>15464</StateNumber>
       <OwnerName>beksultanmamatkadyruulu</OwnerName>
     </sequence>
     <table id="276" parent="273" name="books">
-      <ObjectId>41346</ObjectId>
-      <StateNumber>15372</StateNumber>
+      <ObjectId>41548</ObjectId>
+      <StateNumber>15465</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>beksultanmamatkadyruulu</OwnerName>
     </table>
     <table id="277" parent="273" name="vendors">
-      <ObjectId>41355</ObjectId>
-      <StateNumber>15373</StateNumber>
+      <ObjectId>41557</ObjectId>
+      <StateNumber>15465</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>beksultanmamatkadyruulu</OwnerName>
     </table>
-    <table id="278" parent="273" name="vendors_books">
-      <ObjectId>41363</ObjectId>
-      <StateNumber>15372</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>beksultanmamatkadyruulu</OwnerName>
-    </table>
-    <column id="279" parent="276" name="id">
+    <column id="278" parent="276" name="id">
       <DataType>bigint|0s</DataType>
       <DefaultExpression>nextval(&apos;books_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>15367</StateNumber>
+      <StateNumber>15463</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="280" parent="276" name="author">
+    <column id="279" parent="276" name="author">
       <DataType>varchar(255)|0s</DataType>
       <Position>2</Position>
-      <StateNumber>15367</StateNumber>
+      <StateNumber>15463</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="281" parent="276" name="name">
+    <column id="280" parent="276" name="name">
       <DataType>varchar(255)|0s</DataType>
       <Position>3</Position>
-      <StateNumber>15367</StateNumber>
+      <StateNumber>15463</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="282" parent="276" name="price">
+    <column id="281" parent="276" name="price">
       <DataType>numeric(38,2 digit)|0s</DataType>
       <Position>4</Position>
-      <StateNumber>15367</StateNumber>
+      <StateNumber>15463</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <index id="283" parent="276" name="books_pkey">
+    <column id="282" parent="276" name="vendor_id">
+      <DataType>bigint|0s</DataType>
+      <Position>5</Position>
+      <StateNumber>15463</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="283" parent="276" name="fk2aiaarrh3f3llh3bpackakohj">
+      <ColNames>vendor_id</ColNames>
+      <ObjectId>41565</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <RefKeyName>vendors_pkey</RefKeyName>
+      <StateNumber>15465</StateNumber>
+      <RefTableId>41557</RefTableId>
+      <RefTableName>vendors</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="284" parent="276" name="books_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>41352</ObjectId>
+      <ObjectId>41554</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>15367</StateNumber>
+      <StateNumber>15463</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="284" parent="276" name="books_pkey">
+    <key id="285" parent="276" name="books_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>41353</ObjectId>
+      <ObjectId>41555</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>15367</StateNumber>
-      <UnderlyingIndexId>41352</UnderlyingIndexId>
+      <StateNumber>15463</StateNumber>
+      <UnderlyingIndexId>41554</UnderlyingIndexId>
     </key>
-    <column id="285" parent="277" name="id">
+    <column id="286" parent="277" name="id">
       <DataType>bigint|0s</DataType>
       <DefaultExpression>nextval(&apos;vendors_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>15368</StateNumber>
+      <StateNumber>15464</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="286" parent="277" name="email">
+    <column id="287" parent="277" name="email">
       <DataType>varchar(255)|0s</DataType>
       <Position>2</Position>
-      <StateNumber>15368</StateNumber>
+      <StateNumber>15464</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="287" parent="277" name="name">
+    <column id="288" parent="277" name="name">
       <DataType>varchar(255)|0s</DataType>
       <Position>3</Position>
-      <StateNumber>15368</StateNumber>
+      <StateNumber>15464</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="288" parent="277" name="vendors_pkey">
+    <index id="289" parent="277" name="vendors_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>41361</ObjectId>
+      <ObjectId>41563</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>15368</StateNumber>
+      <StateNumber>15464</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="289" parent="277" name="vendors_pkey">
+    <key id="290" parent="277" name="vendors_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>41362</ObjectId>
+      <ObjectId>41564</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>15368</StateNumber>
-      <UnderlyingIndexId>41361</UnderlyingIndexId>
-    </key>
-    <column id="290" parent="278" name="vendor_id">
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>15369</StateNumber>
-      <TypeId>20</TypeId>
-    </column>
-    <column id="291" parent="278" name="books_id">
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>15369</StateNumber>
-      <TypeId>20</TypeId>
-    </column>
-    <foreign-key id="292" parent="278" name="fkecrsy8mq2gh2vujptvh5xl8tl">
-      <ColNames>vendor_id</ColNames>
-      <ObjectId>41373</ObjectId>
-      <RefColNames>id</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <RefKeyName>vendors_pkey</RefKeyName>
-      <StateNumber>15373</StateNumber>
-      <RefTableId>41355</RefTableId>
-      <RefTableName>vendors</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <foreign-key id="293" parent="278" name="fker4hn8lhh6h6gas1nyo7jlj3l">
-      <ColNames>books_id</ColNames>
-      <ObjectId>41368</ObjectId>
-      <RefColNames>id</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <RefKeyName>books_pkey</RefKeyName>
-      <StateNumber>15372</StateNumber>
-      <RefTableId>41346</RefTableId>
-      <RefTableName>books</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <index id="294" parent="278" name="uk_atuoqumjw47swutphqxc18lgu">
-      <ColNames>books_id</ColNames>
-      <ObjectId>41366</ObjectId>
-      <StateNumber>15371</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="295" parent="278" name="uk_atuoqumjw47swutphqxc18lgu">
-      <ColNames>books_id</ColNames>
-      <ObjectId>41367</ObjectId>
-      <StateNumber>15371</StateNumber>
-      <UnderlyingIndexId>41366</UnderlyingIndexId>
+      <StateNumber>15464</StateNumber>
+      <UnderlyingIndexId>41563</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>
